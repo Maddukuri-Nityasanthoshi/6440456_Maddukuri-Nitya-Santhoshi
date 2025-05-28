@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Community Event Portal</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="main.js" defer></script>
+</head>
+<body>
+
+  <header>
+    <h1>Community Event Portal</h1>
+  </header>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#events">Events</a>
+    <a href="#contact">Contact</a>
+    <a href="help.html" target="_blank">Help</a>
+  </nav>
+
+  <main>
+    <section id="home">
+      <div id="welcomeBanner">
+        Welcome! <span class="highlight">Join our <strong>Special Community Events</strong> this week!</span>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>Event Gallery</h2>
+      <table>
+        <caption>Previous Community Highlights</caption>
+        <tr>
+          <td><img src="Music night.jpg" alt="Music" class="img-border"></td>
+          <td><img src="Art festival.jpg" alt="Art" class="img-border"></td>
+          <td><img src="community walk.jpg" alt="Walk" class="img-border"></td>
+        </tr>
+        <tr>
+          <td><img src="Food-drive.jpg" alt="Food" class="img-border"></td>
+          <td><img src="cleanup day.jpg" alt="Cleanup" class="img-border"></td>
+          <td><img src="book exchange.jpg" alt="Books" class="img-border"></td>
+        </tr>
+      </table>
+    </section>
+
+    <section id="events">
+      <h2>Register for an Event</h2>
+      <form id="eventForm" onsubmit="handleRegistration(event)">
+        <label>Name: <input type="text" name="name" required></label><br>
+        <label>Email: <input type="email" name="email" required></label><br>
+        <label>Date: <input type="date" name="date" required></label><br>
+        <label>Event Type:
+          <select name="eventType" id="eventType" onchange="updateEventSelection()">
+            <option value="">Select</option>
+            <option value="music">Music Night</option>
+            <option value="art">Art Festival</option>
+            <option value="walk">Community Walk</option>
+            <option value="food">Food Drive</option>
+            <option value="cleanup">Cleanup Day</option>
+            <option value="book">Book Exchange</option>
+          </select>
+        </label><br>
+        <label>Message:
+          <textarea name="message" oninput="displayCharCount()"></textarea>
+        </label><br>
+        <div id="charCount">0 characters</div><br>
+        <label>Phone: <input type="text" id="phone" onblur="checkPhoneNumber()"></label><br>
+        <output id="confirmation"></output>
+        <br><br>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <section id="videoInvite">
+      <h2>Event Promo</h2>
+      <video width="320" height="240" controls oncanplay="notifyVideoReady()">
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div id="videoMsg"></div>
+    </section>
+
+    <section id="geolocation">
+      <h2>Find Events Near You</h2>
+      <button onclick="locateNearbyEvents()">Locate Nearby Events</button>
+      <div id="locationOutput"></div>
+    </section>
+
+    <section id="preferences">
+      <h2>Manage Preferences</h2>
+      <button onclick="resetPreferences()">Clear Saved Data</button>
+    </section>
+      <!-- Bulletin -->
+    <section id="news">
+      <h2>Community Bulletin</h2>
+      <div style="column-count: 2; column-gap: 30px; column-rule: 1px solid gray;">
+        <p>Lorem ipsum dolor sit amet...</p>
+        <p>Quisque in arcu nisi...</p>
+      </div>
+    </section>
+  </main>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Community Portal</p>
+  </footer>
+
+</body>
+</html>
+ 
